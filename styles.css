@@ -34,12 +34,12 @@ body {
 
 /* ---------- MAIN CONTENT ---------- */
 .layout {
-    display:flex;
-    gap:20px;
-    max-width:1000px;
-    margin:20px auto;
-    
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
+
+/* Intro box container */
 .intro {
     display: flex;
     align-items: center;
@@ -50,7 +50,7 @@ body {
     box-shadow: 0 2px 5px rgba(194,195,149,0.49);
 }
 
-
+/* Profile image */
 .intro img {
     width: 220px;
     height: 220px;
@@ -59,8 +59,13 @@ body {
     border: 3px solid #EDCDC9;
 }
 
+/* Text section */
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-/* Intro Text */
 .intro-text h2 {
     margin: 0 0 10px 0;
     font-size: 28px;
@@ -71,6 +76,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     max-width: 600px;
+    color: #4a3f3f;
 }
 
 
