@@ -14,7 +14,7 @@ body {
     background-color: #EDCDC9;
     border-radius: 0 0 20px 20px;
     border-bottom: 1px solid #ddd;
-
+    width: 100%;
    
 }
 .nav-right a {
