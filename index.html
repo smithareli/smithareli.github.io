@@ -1,49 +1,38 @@
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Areli Smith Portfolio</title>
+    <title>Areli Smith</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
+  </head>
+  <body>
 
-<body>
-    <header class="navbar">
-        <div class="logo-circle">
-            <ion-icon name="home-outline"></ion-icon>
-        </div>
+    <!-- ---------- NAVBAR ---------- -->
+     <header class="navbar">
+      <div class="nav-left">
+        <h1 class="logo">Areli's Portfolio🐸</h1>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="nav-btn">Home</a>
+        <a href="#" class="nav-btn">About</a>
+        <a href="#" class="nav-btn">Projects</a>
+        <a href="#" class="nav-btn">Contact</a>
+      </div>
+     </header>
 
-
-        <nav class="nav-links">
-            <a href="#projects" class="nav-btn">Projects</a>
-            <a href="#about" class="nav-btn">About Me</a>
-            <a href="#resume" class="nav-btn">Resume</a>
-            <a href="#contact" class="nav-btn">Contact</a>
-        </nav>
-    </header>
-
-    <main class="home-container">
-        <div class="left-box">
-            <!-- Replace with your image -->
-            <div class="profile-placeholder"></div>
-
-            <div class="socials">
-                <a href="https://linkedin.com" class="social-icon linkedin"></a>
-                <a href="https://github.com" class="social-icon github"></a>
-            </div>
-        </div>
-
-        <div class="right-box">
-            <h1 class="home-title">Home Page</h1>
-            <p class="home-info">
-                This is where your intro text goes — who you are, what you do,
-                and what makes your work special.
-            </p>
-        </div>
+     <!-- ---------- MAIN CONTENT ---------- -->
+     <main class="layout">
+      <section class="intro">
+        <img src="profile.jpg" alt="Profile Picture"/>
+        <section class="intro-text">
+          <h2>Hi, I'm Areli!</h2>
+          <p>I'm a software developer with a passion for creating innovative solutions. Welcome to my portfolio!</p>
+        </section>
+      </section>
     </main>
-
-    <footer class="footer"></footer>
-</body>
+    <!-- ---------- FOOTER ---------- -->
+      <footer class="footer">
+        <p>&copy; 2024 Areli Smith. All rights reserved.</p>
+      </footer>
+  </body>
 </html>
