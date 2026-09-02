@@ -55,7 +55,7 @@ body {
   gap: 40px;
   padding: 30px;
   border-radius: 12px;
-  background: #ffffff;
+  background: #EDCDC9;
   margin-bottom: 40px;
 }
 
@@ -68,12 +68,13 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
 }
 
 .project-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-info {
