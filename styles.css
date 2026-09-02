@@ -50,6 +50,7 @@ body {
 
 /* ---------- MAIN CONTENT ---------- */
 .project-tab {
+    margin-top: 20px;
   display: flex;
   align-items: flex-start;
   gap: 40px;
