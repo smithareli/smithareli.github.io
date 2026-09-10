@@ -9,7 +9,7 @@ import imgCode from "./imports/Desktop1/code-solid.png";
 import imgCodeBranch from "./imports/Desktop1/code-branch-solid.png";
 import imgEnvelope from "./imports/Desktop1/envelope-solid.png";
 import imgLinkedin from "./imports/Desktop1/linkedin-brands-solid.png";
-import imgPhone from "./imports/Desktop1/linkedin-brands-solid.png";
+import imgPhone from "./imports/Desktop1/phone-solid.png";
 
 const FULL_TEXT = "I'm Areli Smith";
 
