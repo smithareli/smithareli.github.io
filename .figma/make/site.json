@@ -1,0 +1,10 @@
+{
+  "description": "Interactive personal portfolio site with animated typing, smooth section animations, and responsive project showcases optimized for desktop and mobile users.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
