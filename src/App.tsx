@@ -233,14 +233,15 @@ function DesktopPage({
       className="relative"
       style={{
         minHeight: "3200px",
-        minWidth: "1440px",
+        width: "1440px",
+        zoom: "min(1, calc(100vw / 1440px))",
         background: "linear-gradient(to bottom, #af507d 0%, #f1f798 62.5%, #8d2b59 100%)",
       }}
     >
       {/* ── Sticky Navbar ── */}
       <nav
         className="sticky top-0 z-50 bg-[#8d2b59]"
-        style={{ height: 48, minWidth: "1440px" }}
+        style={{ height: 48, width: 1440 }}
       >
         <div className="relative h-full" style={{ width: 1440 }}>
           <p className="[word-break:break-word] absolute font-['Inter:Extra_Bold',sans-serif] font-extrabold leading-[normal] left-[111px] not-italic text-[#f2d6e3] text-[30px] top-[6px] whitespace-nowrap">
