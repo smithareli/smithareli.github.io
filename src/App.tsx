@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import svgPaths from "../imports/svg-j0nnrvva9c";
-import bgPixels from "./imports/Desktop1/e28149077e9535146ca64526f9a428e4a5d94246.png";
-import imgPortrait from "./imports/Desktop1/8f09e75acb66ae7e94d2162cbbcc72762006da37.png";
-import imgSprite from "./imports/Desktop1/709a85981e539f81d46eda2ada7b40527213712a.png";
-import imgAboutMe from "./imports/Desktop1/a71a64a90391cfe8de2f81929ad584c58f22e23c.png";
-import imgDatabase from "./imports/Desktop1/37367db7889321f424ea4034846be8ac17aca22c.png";
-import imgCode from "./imports/Desktop1/bce9414e7ba08ddddae91109df673af5fd77183c.png";
-import imgCodeBranch from "./imports/Desktop1/af1fb2789500ee195797789f2a3270254f8f5312.png";
-import imgEnvelope from "./imports/Desktop1/769e013d0ad1da6d4fe2e444ffe9fd41044a4d9c.png";
-import imgLinkedin from "./imports/Desktop1/f5e6b260ae4c696c038940b70c35f3bc911e30c1.png";
-import imgPhone from "./imports/Desktop1/03519eb0b2fb52f54b4573295f7ad5cab6b7a434.png";
+import bgPixels from "./imports/Desktop1/Pixels.gif";
+import imgPortrait from "./imports/Desktop1/Mouse.png";
+import imgSprite from "./imports/Desktop1/Smith_idle.gif";
+import imgAboutMe from "./imports/Desktop1/profile_pic.jpg";
+import imgDatabase from "./imports/Desktop1/database-solid.png";
+import imgCode from "./imports/Desktop1/code-solid.png";
+import imgCodeBranch from "./imports/Desktop1/code-branch-solid.png";
+import imgEnvelope from "./imports/Desktop1/envelope-solid.png";
+import imgLinkedin from "./imports/Desktop1/linkedin-brands-solid.png";
+import imgPhone from "./imports/Desktop1/linkedin-brands-solid.png";
 
 const FULL_TEXT = "I'm Areli Smith";
 
