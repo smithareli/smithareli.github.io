@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import svgPaths from "../imports/svg-j0nnrvva9c";
 import bgPixels from "./imports/Desktop1/Pixels.gif";
 import imgPortrait from "./imports/Desktop1/Mouse.png";
-import imgSprite from "./imports/Desktop1/Smith_idle.gif";
+import imgSprite from "./imports/Desktop1/avatar.png";
 import imgAboutMe from "./imports/Desktop1/profile_pic.jpg";
 import imgDatabase from "./imports/Desktop1/database-solid.png";
 import imgCode from "./imports/Desktop1/code-solid.png";
