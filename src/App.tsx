@@ -144,8 +144,12 @@ function DesktopCard({ p }: { p: Project }) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <div className="absolute bg-[#d9d9d9] inset-0" />
-        {/* Hover overlay */}
+      <img
+        src={p.image}
+        alt={`${p.name} project preview`}
+        className="absolute inset-0 size-full object-cover"
+      />        
+      {/* Hover overlay */}
         <div
           className="absolute inset-0 transition-opacity duration-300"
           style={{ opacity: hovered ? 1 : 0, pointerEvents: hovered ? "auto" : "none" }}
