@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import svgPaths from "../imports/svg-j0nnrvva9c";
-import bgPixels from "./imports/Desktop1/Pixels.gif";
+import bgPixels from "./imports/Desktop1/Pixel_looping.gif";
 import imgPortrait from "./imports/Desktop1/Mouse.png";
 import imgSprite from "./imports/Desktop1/avatar.png";
 import imgAboutMe from "./imports/Desktop1/profile_pic.jpg";
@@ -41,9 +41,9 @@ const PROJECTS: Project[] = [
     linkLeft: 213, linkTop: 1860,
     linkIconLeft: 332, linkIconTop: 1861,
     cardLeft: 111, cardTop: 1529,
-    techStack: "Tech Stack: React | JavaScript | CSS",
-    description: "A reading tracker and book discussion platform built for book lovers to catalog reads, write reviews, and connect with readers.",
-    link: "#",
+    techStack: "Tech Stack: JavaScript | React Native (Expo) | Google Gemini API ",
+    description: "ShelfTalk lets readers organize their books, create digital shelves, write journal entries, and share them with a community through likes, comments, and follows. I led the exploration of different LLMs to determine the best fit for the app and built several Gemini API prototypes that evolved into the AI prompt‑generation feature.",
+    link: "https://github.com/emilyzucker1/ShelfTalk",
   },
   {
     key: "swamp-princess",
@@ -53,7 +53,7 @@ const PROJECTS: Project[] = [
     linkIconLeft: 767, linkIconTop: 1860,
     cardLeft: 543, cardTop: 1529,
     techStack: "Tech Stack: React | TypeScript | CSS",
-    description: "A whimsical interactive experience inspired by Florida folklore, featuring animated storytelling and custom pixel art.",
+    description: "Swamp Princess is a 2d pixel‑art side‑scrolling adventure where you play as a princess fighting through a corrupted swamp to rescue her family. I developed the game solo in Unity, drawing inspiration from classic retro platformers and focusing on expressive environments and tight, responsive gameplay.",
     link: "#",
   },
   {
@@ -63,9 +63,9 @@ const PROJECTS: Project[] = [
     linkLeft: 1077, linkTop: 1858,
     linkIconLeft: 1196, linkIconTop: 1859,
     cardLeft: 974, cardTop: 1529,
-    techStack: "Tech Stack: JavaScript | HTML | CSS",
-    description: "A family recipe archive with a clean nostalgic UI for browsing, searching, and saving generational recipes.",
-    link: "#",
+    techStack: "Tech Stack: React Native (Expo) | Firebase Authentication | Firestore, Google Gemini API, WhisprAPI",
+    description: "Nonna’s Recipes is a mobile app that helps families preserve generational recipes using AI‑powered memory capture. Users can create recipes by typing or speaking their recollections, explore global family dishes, and connect food to heritage through an interactive world map.",
+    link: "https://github.com/JALA-gals/Nonna-s-Recipes",
   },
   {
     key: "duckie",
@@ -74,20 +74,20 @@ const PROJECTS: Project[] = [
     linkLeft: 213, linkTop: 2259,
     linkIconLeft: 332, linkIconTop: 2260,
     cardLeft: 111, cardTop: 1928,
-    techStack: "Tech Stack: React Native | Expo | JavaScript",
-    description: "A mobile app guiding kids through AI-themed adventures with interactive challenges and a rubber duck companion.",
-    link: "#",
+    techStack: "Tech Stack: Python | Pygame | Google Generative AI (Gemini) API",
+    description: "Duckie AI Venture is an educational game built to teach children how to prompt AI effectively. Through playful interactions with a friendly duck character, kids learn how tone, clarity, and specificity shape AI responses. The game encourages experimentation and helps young users build foundational AI literacy in a fun, approachable way.",
+    link: "https://github.com/mohana-pamidi/jmakSwampHacks",
   },
   {
     key: "harn",
-    name: "Harn Museum Exhibit",
+    name: "POD Connect",
     nameLeft: 615, nameTop: 2224,
     linkLeft: 648, linkTop: 2259,
     linkIconLeft: 767, linkIconTop: 2260,
     cardLeft: 543, cardTop: 1928,
-    techStack: "Tech Stack: React | Figma | CSS",
-    description: "An interactive digital exhibit companion for the Harn Museum of Art to explore collections and artist stories.",
-    link: "#",
+    techStack: "Tech Stack:  React Native (Expo) | Firebase Authentication | Firestore | MongoDB",
+    description: "POD‑Connect is a mobile event‑management app designed to help clubs and communities organize their activities in one centralized platform. Users can create clubs, manage events, track attendance, and browse upcoming activities through a clean, structured interface built for both organizers and members.",
+    link: "https://github.com/SWEetPeas-Co/POD-Connect",
   },
   {
     key: "eatsy",
@@ -96,9 +96,9 @@ const PROJECTS: Project[] = [
     linkLeft: 1074, linkTop: 2257,
     linkIconLeft: 1193, linkIconTop: 2258,
     cardLeft: 975, cardTop: 1928,
-    techStack: "Tech Stack: React | Firebase | TypeScript",
-    description: "A meal-planning and grocery list app with smart suggestions and a clean interface for healthy eating.",
-    link: "#",
+    techStack: "Tech Stack: C++ | React | JavaScript",
+    description: "Eatsy Peatsy is a web app that helps users quickly discover food spots by browsing cuisine types, ratings, and recommendations through a clean, easy‑to‑navigate interface. I built the backend data‑processing logic in C++ using efficient sorting algorithms, set up the React front end, and maintained organized documentation and version control workflows to support smooth team collaboration.",
+    link: "https://github.com/smithareli/EatsyPeatsy",
   },
 ];
 
