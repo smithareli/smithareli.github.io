@@ -144,7 +144,7 @@ function DesktopCard({ p }: { p: Project }) {
               <path d="M0 0H345V285H0V0Z" fill="#757575" opacity="0.5" />
             </svg>
           </div>
-          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[20px] text-black overflow-hidden">
+          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[15px] text-black overflow-y-auto">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mb-2">{p.techStack}</p>
             <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal]">{p.description}</p>
           </div>
@@ -158,18 +158,28 @@ function DesktopCard({ p }: { p: Project }) {
         {p.name}
       </p>
       {/* "Project Link" text */}
-      <p
+      <a
         className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[normal] not-italic text-[#492134] text-[20px] whitespace-nowrap"
         style={{ left: p.linkLeft, top: p.linkTop }}
+        href={p.link}
+        target="_blank"
+        rel="noreferrer"
       >
-        {`Project Link `}
-      </p>
+        <p className="cursor-pointer underline">{`Project Link `}</p>
+      </a>
       {/* Link icon */}
-      <div className="absolute overflow-clip size-[24px]" style={{ left: p.linkIconLeft, top: p.linkIconTop }}>
+      <a
+        className="absolute overflow-clip size-[24px]"
+        style={{ left: p.linkIconLeft, top: p.linkIconTop }}
+        href={p.link}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Open ${p.name} project link`}
+      >
         <div className="absolute inset-[29.17%_8.33%]">
           <LinkSvg />
         </div>
-      </div>
+      </a>
     </>
   );
 }
@@ -287,7 +297,7 @@ function DesktopPage({
       <div className="absolute contents left-[70px] top-[67px]">
         {[67, 914, 1829].map((top) => (
           <div key={top} className="absolute h-[767px] left-[84px] w-[1309px]" style={{ top }}>
-            <img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={bgPixels} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover opacity-20 pointer-events-none size-full" src={bgPixels} />
           </div>
         ))}
         <div className="absolute h-[325px] left-[70px] top-[2608px] w-[1309px]">
@@ -592,15 +602,15 @@ function MobileCard({ p }: { p: Project }) {
       {/* Project name */}
       <p className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[18px] mt-2">{p.name}</p>
       {/* Tech stack + description always visible on mobile */}
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#492134] text-[14px] mt-1">{p.techStack}</p>
-      <p className="font-['Inter:Regular',sans-serif] font-normal text-[#492134] text-[14px] mt-1 leading-snug">{p.description}</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#492134] text-[9px] mt-1">{p.techStack}</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal text-[#492134] text-[9px] mt-1 leading-snug">{p.description}</p>
       {/* Project link */}
-      <div className="flex items-center gap-1 mt-2">
-        <span className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[16px]">Project Link </span>
+      <a className="flex items-center gap-1 mt-2" href={p.link} target="_blank" rel="noreferrer">
+        <span className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[16px] underline">Project Link </span>
         <div className="relative overflow-clip w-[20px] h-[10px]">
           <LinkSvg />
         </div>
-      </div>
+      </a>
     </div>
   );
 }
@@ -650,7 +660,7 @@ function MobilePage({
 
       {/* Pixel background (decorative) */}
       <div className="fixed inset-0 pointer-events-none z-0" aria-hidden>
-        <img alt="" src={bgPixels} className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <img alt="" src={bgPixels} className="absolute inset-0 w-full h-full object-cover opacity-20" />
       </div>
 
       <div className="relative z-10">
