@@ -10,6 +10,10 @@ import imgCodeBranch from "./imports/Desktop1/code-branch-solid.png";
 import imgEnvelope from "./imports/Desktop1/envelope-solid.png";
 import imgLinkedin from "./imports/Desktop1/linkedin-brands-solid.png";
 import imgPhone from "./imports/Desktop1/phone-solid.png";
+import imgSwampPrincess from "./imports/Desktop1/Swamp_pic.png";
+import imgNonnasRecipes from "./imports/Desktop1/Nonna's_pic.png";
+import imgDuckie from "./imports/Desktop1/Duckie_Ai_Adventure.jpg";
+import imgPODConnect from "./imports/Desktop1/POD_pic.png";
 
 const FULL_TEXT = "I'm Areli Smith";
 
@@ -23,6 +27,7 @@ const NAV_LINES: Record<string, { left: number; width: number }> = {
 
 type Project = {
   key: string;
+  image: string;
   name: string;
   nameLeft: number; nameTop: number;
   linkLeft: number; linkTop: number;
@@ -36,6 +41,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     key: "shelf-talk",
+    image: imgDuckie,
     name: "Shelf Talk",
     nameLeft: 237, nameTop: 1825,
     linkLeft: 213, linkTop: 1860,
@@ -47,6 +53,7 @@ const PROJECTS: Project[] = [
   },
   {
     key: "swamp-princess",
+    image: imgSwampPrincess,
     name: "Swamp Princess",
     nameLeft: 638, nameTop: 1820,
     linkLeft: 648, linkTop: 1859,
@@ -58,6 +65,7 @@ const PROJECTS: Project[] = [
   },
   {
     key: "nonnas-recipes",
+    image: imgNonnasRecipes,
     name: "Nonna's Recipes",
     nameLeft: 1068, nameTop: 1820,
     linkLeft: 1077, linkTop: 1858,
@@ -69,6 +77,7 @@ const PROJECTS: Project[] = [
   },
   {
     key: "duckie",
+    image: imgDuckie,
     name: "Duckie AIventure",
     nameLeft: 200, nameTop: 2224,
     linkLeft: 213, linkTop: 2259,
@@ -80,6 +89,7 @@ const PROJECTS: Project[] = [
   },
   {
     key: "harn",
+    image: imgPODConnect,
     name: "POD Connect",
     nameLeft: 615, nameTop: 2224,
     linkLeft: 648, linkTop: 2259,
@@ -91,6 +101,7 @@ const PROJECTS: Project[] = [
   },
   {
     key: "eatsy",
+    image:imgPODConnect,
     name: "Eatsy Peatsy",
     nameLeft: 1086, nameTop: 2224,
     linkLeft: 1074, linkTop: 2257,
@@ -144,7 +155,7 @@ function DesktopCard({ p }: { p: Project }) {
               <path d="M0 0H345V285H0V0Z" fill="#757575" opacity="0.5" />
             </svg>
           </div>
-          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[15px] text-black overflow-y-auto">
+          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-black overflow-y-auto">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mb-2">{p.techStack}</p>
             <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal]">{p.description}</p>
           </div>
@@ -602,8 +613,8 @@ function MobileCard({ p }: { p: Project }) {
       {/* Project name */}
       <p className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[18px] mt-2">{p.name}</p>
       {/* Tech stack + description always visible on mobile */}
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#492134] text-[9px] mt-1">{p.techStack}</p>
-      <p className="font-['Inter:Regular',sans-serif] font-normal text-[#492134] text-[9px] mt-1 leading-snug">{p.description}</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#492134] text-[11px] mt-1">{p.techStack}</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal text-[#492134] text-[11px] mt-1 leading-snug">{p.description}</p>
       {/* Project link */}
       <a className="flex items-center gap-1 mt-2" href={p.link} target="_blank" rel="noreferrer">
         <span className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[16px] underline">Project Link </span>
