@@ -156,7 +156,7 @@ function DesktopCard({ p }: { p: Project }) {
         >
           <div className="absolute inset-[0.35%_0_-0.35%_0.58%]">
             <svg className="absolute block inset-0 size-full" fill="none" height="285" preserveAspectRatio="none" viewBox="0 0 345 285" width="345">
-              <path d="M0 0H345V285H0V0Z" fill="#757575" opacity="0.5" />
+              <path d="M0 0H345V285H0V0Z" fill="#757575" opacity="0.8" />
             </svg>
           </div>
           <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-black overflow-y-auto">
