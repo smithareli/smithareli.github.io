@@ -11,8 +11,8 @@ import imgEnvelope from "./imports/Desktop1/envelope-solid.png";
 import imgLinkedin from "./imports/Desktop1/linkedin-brands-solid.png";
 import imgPhone from "./imports/Desktop1/phone-solid.png";
 import imgSwampPrincess from "./imports/Desktop1/Swamp_pic.png";
-import imgNonnasRecipes from "./imports/Desktop1/Nonna's_pic.png";
-import imgDuckie from "./imports/Desktop1/Duckie_Ai_Adventure.jpg";
+import imgNonnasRecipes from "./imports/Desktop1/nonnas-recipes.png";
+import imgDuckie from "./imports/Desktop1/Duckies Ai Adventure.jpg";
 import imgPODConnect from "./imports/Desktop1/POD_pic.png";
 
 const FULL_TEXT = "I'm Areli Smith";
