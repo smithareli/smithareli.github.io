@@ -14,7 +14,7 @@ import imgSwampPrincess from "./imports/Desktop1/Swamp_pic.png";
 import imgNonnasRecipes from "./imports/Desktop1/Nonnas.png";
 import imgDuckie from "./imports/Desktop1/Duckie AI.png";
 import imgPODConnect from "./imports/Desktop1/POD.png";
-import imgEatsyPeatsy from "./imports/Desktop1/Eatsy Peatsy.png";
+import imgEatsyPeatsy from "./imports/Desktop1/Eatsy.png";
 import imgShelfTalk from "./imports/Desktop1/Shelftalk.png";
 import resumePdf from "./imports/Desktop1/Areli_s_Resume.pdf";
 
@@ -622,7 +622,7 @@ function MobileCard({ p }: { p: Project }) {
   return (
     <div className="flex flex-col">
       {/* Project image */}
-      <div className="relative h-[220px] overflow-hidden bg-[#d9d9d9] border border-[#492134]">
+      <div className="relative aspect-[347/285] w-full overflow-hidden bg-[#d9d9d9] border border-[#492134]">
         <img
           src={p.image}
           alt={`${p.name} project preview`}
