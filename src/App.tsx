@@ -274,16 +274,16 @@ function DesktopPage({
             ARELI SMITH
           </p>
           {[
-            { id: "home",    label: "HOME",     left: 614  },
-            { id: "about",   label: "ABOUT ME", left: 786  },
-            { id: "work",    label: "WORK",     left: 1027 },
-            { id: "contact", label: "CONTACT",  left: 1201 },
-          ].map(({ id, label, left }) => (
+            { id: "home",    label: "HOME" },
+            { id: "about",   label: "ABOUT ME" },
+            { id: "work",    label: "WORK" },
+            { id: "contact", label: "CONTACT" },
+          ].map(({ id, label }) => (
             <button
               key={id}
               onClick={() => onNavClick(id)}
-              className="[word-break:break-word] absolute block cursor-pointer font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[0] not-italic text-[#f2d6e3] text-[30px] text-left top-[6px] whitespace-nowrap"
-              style={{ left }}
+              className="[word-break:break-word] absolute block cursor-pointer font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[0] not-italic text-[#f2d6e3] text-[30px] text-center top-[6px] whitespace-nowrap"
+              style={{ left: NAV_LINES[id].left, width: NAV_LINES[id].width }}
             >
               <p className="leading-[normal]">{label}</p>
             </button>
@@ -874,9 +874,9 @@ export default function App() {
     }
     const targets: Record<string, number> = {
       home: 0,
-      about: 624,   // 672 - 48
-      work: 1355,   // 1403 - 48
-      contact: 2896, // 2944 - 48
+      about: 601,   // 672 - 48
+      work: 1336,   // 1403 - 48
+      contact: 2496, // 2944 - 48
     };
     window.scrollTo({ top: targets[id] ?? 0, behavior: "smooth" });
   };
