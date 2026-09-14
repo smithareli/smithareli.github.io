@@ -11,9 +11,9 @@ import imgEnvelope from "./imports/Desktop1/envelope-solid.png";
 import imgLinkedin from "./imports/Desktop1/linkedin-brands-solid.png";
 import imgPhone from "./imports/Desktop1/phone-solid.png";
 import imgSwampPrincess from "./imports/Desktop1/Swamp_pic.png";
-import imgNonnasRecipes from "./imports/Desktop1/nonnas-recipes.png";
-import imgDuckie from "./imports/Desktop1/Duckies Ai Adventure.jpg";
-import imgPODConnect from "./imports/Desktop1/POD_pic.png";
+import imgNonnasRecipes from "./imports/Desktop1/Nonnas.png";
+import imgDuckie from "./imports/Desktop1/Duckie AI.png";
+import imgPODConnect from "./imports/Desktop1/POD.png";
 
 const FULL_TEXT = "I'm Areli Smith";
 
@@ -384,7 +384,7 @@ function DesktopPage({
         <div className="-scale-y-100 flex-none rotate-180">
           <div className="h-[381px] relative w-[392px]">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="" className="absolute h-[115.75%] left-[-11.48%] max-w-none top-0 w-[450%]" src={imgSprite} />
+              <img alt="" className="absolute inset-0 size-full object-contain [image-rendering:pixelated]" src={imgSprite} />
             </div>
           </div>
         </div>
@@ -457,7 +457,7 @@ function DesktopPage({
       {/* Photo */}
       <div className="absolute h-[512px] left-[111px] pointer-events-none top-[710px] w-[502px]">
         <div className="absolute inset-0 opacity-80 overflow-hidden">
-          <img alt="" className="absolute h-[187.11%] left-[-13.68%] max-w-none top-[-73.49%] w-[127.54%]" src={imgAboutMe} />
+          <img alt="" className="absolute inset-0 size-full object-cover" src={imgAboutMe} />
         </div>
         <div aria-hidden className="absolute border-2 border-[#492134] border-solid inset-0" />
       </div>
@@ -703,7 +703,7 @@ function MobilePage({
           {/* Sprite */}
           <div className="flex justify-center mt-6">
             <div className="-scale-y-100 rotate-180 w-[180px] h-[174px] overflow-hidden relative">
-              <img alt="Pixel art character" src={imgSprite} className="absolute max-w-none" style={{ height: "115.75%", left: "-11.48%", top: 0, width: "450%" }} />
+              <img alt="Pixel art character" src={imgSprite} className="absolute inset-0 size-full object-contain [image-rendering:pixelated]" />
             </div>
           </div>
         </section>
@@ -726,7 +726,7 @@ function MobilePage({
             </div>
             <div className="bg-[#d9d9d9] relative" style={{ height: 280 }}>
               <div className="absolute inset-0 opacity-80 overflow-hidden">
-                <img alt="Areli Smith" src={imgAboutMe} className="absolute max-w-none" style={{ height: "187.11%", left: "-13.68%", top: "-73.49%", width: "127.54%" }} />
+                <img alt="Areli Smith" src={imgAboutMe} className="absolute inset-0 size-full object-cover" />
               </div>
             </div>
           </div>
