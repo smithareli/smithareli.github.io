@@ -14,6 +14,8 @@ import imgSwampPrincess from "./imports/Desktop1/Swamp_pic.png";
 import imgNonnasRecipes from "./imports/Desktop1/Nonnas.png";
 import imgDuckie from "./imports/Desktop1/Duckie AI.png";
 import imgPODConnect from "./imports/Desktop1/POD.png";
+import imgEatsyPeatsy from "./imports/Desktop1/Eatsy Peatsy.png";
+import imgShelfTalk from "./imports/Desktop1/Shelftalk.png";
 
 const FULL_TEXT = "I'm Areli Smith";
 
@@ -24,7 +26,6 @@ const NAV_LINES: Record<string, { left: number; width: number }> = {
   work:    { left: 1011, width: 105 },
   contact: { left: 1183, width: 168 },
 };
-
 type Project = {
   key: string;
   image: string;
@@ -41,7 +42,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     key: "shelf-talk",
-    image: imgDuckie,
+    image: imgShelfTalk,
     name: "Shelf Talk",
     nameLeft: 237, nameTop: 1825,
     linkLeft: 213, linkTop: 1860,
@@ -101,7 +102,7 @@ const PROJECTS: Project[] = [
   },
   {
     key: "eatsy",
-    image:imgPODConnect,
+    image: imgEatsyPeatsy,
     name: "Eatsy Peatsy",
     nameLeft: 1086, nameTop: 2224,
     linkLeft: 1074, linkTop: 2257,
@@ -156,7 +157,7 @@ function DesktopCard({ p }: { p: Project }) {
         >
           <div className="absolute inset-[0.35%_0_-0.35%_0.58%]">
             <svg className="absolute block inset-0 size-full" fill="none" height="285" preserveAspectRatio="none" viewBox="0 0 345 285" width="345">
-              <path d="M0 0H345V285H0V0Z" fill="#757575" opacity="0.8" />
+              <path d="M0 0H345V285H0V0Z" fill="#492134" opacity="0.95" />
             </svg>
           </div>
           <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-black overflow-y-auto">
