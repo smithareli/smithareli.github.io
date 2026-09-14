@@ -27,6 +27,12 @@ const NAV_LINES: Record<string, { left: number; width: number }> = {
   work:    { left: 1011, width: 105 },
   contact: { left: 1183, width: 168 },
 };
+
+const DESKTOP_DIVIDERS = {
+  homeToAbout: 601,
+  aboutToWork: 1336,
+};
+
 type Project = {
   key: string;
   image: string;
@@ -161,7 +167,7 @@ function DesktopCard({ p }: { p: Project }) {
               <path d="M0 0H345V285H0V0Z" fill="#8D2B59" opacity="1" />
             </svg>
           </div>
-          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-[#492134] overflow-y-auto">
+          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-[#FEF4F9] overflow-y-auto">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mb-2">{p.techStack}</p>
             <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal]">{p.description}</p>
           </div>
@@ -862,11 +868,24 @@ export default function App() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      // Section boundaries (desktop: 1440px layout; mobile: proportionally shorter)
-      if (y < 560) setActiveSection("home");
-      else if (y < 1310) setActiveSection("about");
-      else if (y < 2370) setActiveSection("work");
-      else setActiveSection("contact");
+      const isMobile = window.innerWidth < 1024;
+
+      if (isMobile) {
+        const sectionIds = ["home", "about", "work", "contact"];
+        const marker = y + 60;
+        let currentSection = "home";
+        sectionIds.forEach((id) => {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= marker) currentSection = id;
+        });
+        setActiveSection(currentSection);
+      } else {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (y >= maxScroll - 4) setActiveSection("contact");
+        else if (y >= DESKTOP_DIVIDERS.aboutToWork) setActiveSection("work");
+        else if (y >= DESKTOP_DIVIDERS.homeToAbout) setActiveSection("about");
+        else setActiveSection("home");
+      }
 
       if (!floatStarted.current && y > 550) {
         floatStarted.current = true;
@@ -888,9 +907,11 @@ export default function App() {
       home: 0,
       about: 553,   // 672 - 48
       work: 1288,   // 1403 - 48
-      contact: 2448, // 2944 - 48
     };
-    window.scrollTo({ top: targets[id] ?? 0, behavior: "smooth" });
+    const target = id === "contact"
+      ? document.documentElement.scrollHeight - window.innerHeight
+      : targets[id] ?? 0;
+    window.scrollTo({ top: target, behavior: "smooth" });
   };
 
   return (
