@@ -17,6 +17,7 @@ import imgPODConnect from "./imports/Desktop1/POD.png";
 import imgEatsyPeatsy from "./imports/Desktop1/Eatsy.png";
 import imgShelfTalk from "./imports/Desktop1/Shelftalk.png";
 import resumePdf from "./imports/Desktop1/Areli_s_Resume.pdf";
+import swampDemo from "./imports/Desktop1/Swamp_demo.mp4";
 
 const FULL_TEXT = "I'm Areli Smith";
 
@@ -75,7 +76,7 @@ const PROJECTS: Project[] = [
     cardLeft: 543, cardTop: 1529,
     techStack: "Tech Stack: React | TypeScript | CSS",
     description: "Swamp Princess is a 2d pixel‑art side‑scrolling adventure where you play as a princess fighting through a corrupted swamp to rescue her family. I developed the game solo in Unity, drawing inspiration from classic retro platformers and focusing on expressive environments and tight, responsive gameplay.",
-    link: "#",
+    link: swampDemo,
   },
   {
     key: "nonnas-recipes",
@@ -168,11 +169,7 @@ function DesktopCard({ p }: { p: Project }) {
           className="absolute inset-0 transition-opacity duration-300"
           style={{ opacity: hovered ? 1 : 0, pointerEvents: hovered ? "auto" : "none" }}
         >
-          <div className="absolute inset-[0.35%_0_-0.35%_0.58%]">
-            <svg className="absolute block inset-0 size-full" fill="none" height="285" preserveAspectRatio="none" viewBox="0 0 345 285" width="345">
-              <path d="M0 0H345V285H0V0Z" fill="#8D2B59" opacity="1" />
-            </svg>
-          </div>
+          <div className="absolute inset-0 bg-[#8D2B59]" />
           <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-[#FEF4F9] overflow-y-auto">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mb-2">{p.techStack}</p>
             <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal]">{p.description}</p>
