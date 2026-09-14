@@ -33,6 +33,11 @@ const DESKTOP_DIVIDERS = {
   aboutToWork: 1336,
 };
 const DESKTOP_NAV_HEIGHT = 48;
+const DESKTOP_NAV_TARGETS = {
+  home: 0,
+  about: DESKTOP_DIVIDERS.homeToAbout - DESKTOP_NAV_HEIGHT - 48,
+  work: DESKTOP_DIVIDERS.aboutToWork - DESKTOP_NAV_HEIGHT - 100,
+};
 
 type Project = {
   key: string;
@@ -260,8 +265,6 @@ function DesktopPage({
   floatVisible: boolean;
   onNavClick: (id: string) => void;
 }) {
-  const line = NAV_LINES[activeSection] ?? NAV_LINES.home;
-
   return (
     <div
       className="relative"
@@ -294,26 +297,17 @@ function DesktopPage({
               style={{ left }}
             >
               <p className="leading-[normal]">{label}</p>
+              <span
+                className="absolute left-1/2 top-[44px] -translate-x-1/2 transition-opacity duration-300"
+                style={{ opacity: activeSection === id ? 1 : 0, width: NAV_LINES[id].width }}
+                aria-hidden
+              >
+                <svg className="block" fill="none" height="6" viewBox={`0 0 ${NAV_LINES[id].width} 6`} width={NAV_LINES[id].width}>
+                  <line stroke="#F1F798" strokeLinecap="round" strokeWidth="6" x1="3" x2={NAV_LINES[id].width - 3} y1="3" y2="3" />
+                </svg>
+              </span>
             </button>
           ))}
-          {/* Active underline — moves via transition */}
-          <div
-            className="absolute"
-            style={{
-              left: line.left,
-              top: 50,
-              width: line.width,
-              transition: "left 0.3s ease, width 0.3s ease",
-            }}
-          >
-            <div className="relative" style={{ height: "1.016px" }}>
-              <div className="absolute" style={{ inset: "-6px 0 0 0" }}>
-                <svg fill="none" height="6" preserveAspectRatio="none" viewBox={`0 0 ${line.width} 6`} width={line.width}>
-                  <line stroke="#F1F798" strokeLinecap="round" strokeWidth="6" x1="3" x2={line.width - 3} y1="3" y2="3" />
-                </svg>
-              </div>
-            </div>
-          </div>
         </div>
       </nav>
 
@@ -883,8 +877,8 @@ export default function App() {
       } else {
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (y >= maxScroll - 4) setActiveSection("contact");
-        else if (y >= DESKTOP_DIVIDERS.aboutToWork - DESKTOP_NAV_HEIGHT) setActiveSection("work");
-        else if (y >= DESKTOP_DIVIDERS.homeToAbout - DESKTOP_NAV_HEIGHT) setActiveSection("about");
+        else if (y >= DESKTOP_NAV_TARGETS.work) setActiveSection("work");
+        else if (y >= DESKTOP_NAV_TARGETS.about) setActiveSection("about");
         else setActiveSection("home");
       }
 
@@ -904,14 +898,9 @@ export default function App() {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
       return;
     }
-    const targets: Record<string, number> = {
-      home: 0,
-      about: DESKTOP_DIVIDERS.homeToAbout - DESKTOP_NAV_HEIGHT,
-      work: DESKTOP_DIVIDERS.aboutToWork - DESKTOP_NAV_HEIGHT,
-    };
     const target = id === "contact"
       ? document.documentElement.scrollHeight - window.innerHeight
-      : targets[id] ?? 0;
+      : DESKTOP_NAV_TARGETS[id as keyof typeof DESKTOP_NAV_TARGETS] ?? 0;
     window.scrollTo({ top: target, behavior: "smooth" });
   };
 
