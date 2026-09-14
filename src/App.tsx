@@ -712,7 +712,7 @@ function MobilePage({
               <p className="font-['Inter:Medium',sans-serif] font-medium text-[#fcfee0] text-[16px] leading-snug">Computer Science Student Minoring in Digital Arts and Science</p>
             </div>
           </div>
-          <p className="font-['Inter:Medium',sans-serif] font-medium text-[#492134] text-[16px] leading-snug mt-3">Computer Science Student Minoring in Digital Arts and Science</p>
+          <p className="font-['Inter:Medium',sans-serif] font-medium text-[#492134] text-[16px] leading-snug mt-3">AI‑Driven Developer Exploring Creative Technology & Interactive Media</p>
           <div className="relative mt-4 inline-block">
             <div className="absolute border border-[#492134] inset-0 translate-x-[6px] translate-y-[6px]" />
             <a
@@ -753,7 +753,7 @@ function MobilePage({
           {[
             "Front‑end developer with a strong UI/UX focus",
             "Actively pursuing software engineering internships",
-            "React, JavaScript, TypeScript, CSS, Figma",
+            "Strong foundation in C++ and Python",
           ].map((text, i) => (
             <div
               key={i}
