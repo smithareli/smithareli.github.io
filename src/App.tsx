@@ -352,7 +352,7 @@ function DesktopPage({
       {/* Box text */}
       <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium h-[50px] leading-[normal] left-[133px] not-italic text-[#fcfee0] text-[20px] top-[256px] w-[341px]">Computer Science Student Minoring in Digital Arts and Science</p>
       {/* Ghost subtitle */}
-      <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium h-[50px] leading-[normal] left-[122px] not-italic text-[#492134] text-[20px] top-[350px] w-[341px]">Computer Science Student Minoring in Digital Arts and Science</p>
+      <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium h-[50px] leading-[normal] left-[122px] not-italic text-[#492134] text-[20px] top-[350px] w-[341px]">AI‑Driven Developer Exploring Creative Technology & Interactive Media</p>
       {/* Resume button */}
       <a
         className="absolute cursor-pointer h-[39px] left-[212px] top-[422px] w-[158px]"
@@ -455,7 +455,7 @@ function DesktopPage({
         wLeft={717} wTop={1144}
         boxRelTop={0} iconRelTop={2}
         textRelLeft={44} textRelTop={5} textWidth={462} textHeight={24}
-        text="React, JavaScript, TypeScript, CSS, Figma"
+        text="Strong foundation in C++ and Python"
         whitespace="whitespace-nowrap"
         visible={floatVisible} delay={0.4}
       />
@@ -890,7 +890,8 @@ export default function App() {
         else setActiveSection("home");
       }
 
-      if (!floatStarted.current && y > 550) {
+      const floatTrigger = isMobile ? 550 : DESKTOP_NAV_TARGETS.about;
+      if (!floatStarted.current && y >= floatTrigger) {
         floatStarted.current = true;
         setFloatVisible(true);
       }
