@@ -32,6 +32,7 @@ const DESKTOP_DIVIDERS = {
   homeToAbout: 601,
   aboutToWork: 1336,
 };
+const DESKTOP_NAV_HEIGHT = 48;
 
 type Project = {
   key: string;
@@ -281,16 +282,16 @@ function DesktopPage({
             ARELI SMITH
           </p>
           {[
-            { id: "home",    label: "HOME" },
-            { id: "about",   label: "ABOUT ME" },
-            { id: "work",    label: "WORK" },
-            { id: "contact", label: "CONTACT" },
-          ].map(({ id, label }) => (
+            { id: "home",    label: "HOME",     left: 614  },
+            { id: "about",   label: "ABOUT ME", left: 786  },
+            { id: "work",    label: "WORK",     left: 1027 },
+            { id: "contact", label: "CONTACT",  left: 1201 },
+          ].map(({ id, label, left }) => (
             <button
               key={id}
               onClick={() => onNavClick(id)}
-              className="[word-break:break-word] absolute block cursor-pointer font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[0] not-italic text-[#f2d6e3] text-[30px] text-center top-[6px] whitespace-nowrap"
-              style={{ left: NAV_LINES[id].left, width: NAV_LINES[id].width }}
+              className="[word-break:break-word] absolute block cursor-pointer font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[0] not-italic text-[#f2d6e3] text-[30px] text-left top-[6px] whitespace-nowrap"
+              style={{ left }}
             >
               <p className="leading-[normal]">{label}</p>
             </button>
@@ -882,8 +883,8 @@ export default function App() {
       } else {
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (y >= maxScroll - 4) setActiveSection("contact");
-        else if (y >= DESKTOP_DIVIDERS.aboutToWork) setActiveSection("work");
-        else if (y >= DESKTOP_DIVIDERS.homeToAbout) setActiveSection("about");
+        else if (y >= DESKTOP_DIVIDERS.aboutToWork - DESKTOP_NAV_HEIGHT) setActiveSection("work");
+        else if (y >= DESKTOP_DIVIDERS.homeToAbout - DESKTOP_NAV_HEIGHT) setActiveSection("about");
         else setActiveSection("home");
       }
 
@@ -905,8 +906,8 @@ export default function App() {
     }
     const targets: Record<string, number> = {
       home: 0,
-      about: 553,   // 672 - 48
-      work: 1288,   // 1403 - 48
+      about: DESKTOP_DIVIDERS.homeToAbout - DESKTOP_NAV_HEIGHT,
+      work: DESKTOP_DIVIDERS.aboutToWork - DESKTOP_NAV_HEIGHT,
     };
     const target = id === "contact"
       ? document.documentElement.scrollHeight - window.innerHeight
