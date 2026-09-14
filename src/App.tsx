@@ -621,8 +621,14 @@ function DesktopPage({
 function MobileCard({ p }: { p: Project }) {
   return (
     <div className="flex flex-col">
-      {/* Placeholder image */}
-      <div className="h-[220px] bg-[#d9d9d9] border border-[#492134]" />
+      {/* Project image */}
+      <div className="relative h-[220px] overflow-hidden bg-[#d9d9d9] border border-[#492134]">
+        <img
+          src={p.image}
+          alt={`${p.name} project preview`}
+          className="absolute inset-0 size-full object-cover"
+        />
+      </div>
       {/* Project name */}
       <p className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[18px] mt-2">{p.name}</p>
       {/* Tech stack + description always visible on mobile */}
@@ -689,12 +695,19 @@ function MobilePage({
 
       <div className="relative z-10">
         {/* Home */}
-        <section id="home" className="px-5 pt-10 pb-12">
-          <p className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[28px] leading-normal">Hello!</p>
-          <div className="w-[50px] h-[3px] bg-[#CFD746] my-2" />
-          <div className="flex items-center">
-            <span className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[28px] leading-normal whitespace-nowrap">{typedText}</span>
-            <span className={`inline-block w-[6px] h-[28px] bg-[#F1F798] ml-[2px] flex-shrink-0 ${typingDone ? "cursor-blink" : ""}`} />
+        <section id="home" className="scroll-mt-[48px] px-5 pt-10 pb-12">
+          <div className="flex items-start gap-2">
+            <div className="min-w-0 flex-1">
+              <p className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[28px] leading-normal">Hello!</p>
+              <div className="w-[50px] h-[3px] bg-[#CFD746] my-2" />
+              <div className="flex items-center">
+                <span className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[24px] leading-normal whitespace-nowrap">{typedText}</span>
+                <span className={`inline-block w-[6px] h-[28px] bg-[#F1F798] ml-[2px] flex-shrink-0 ${typingDone ? "cursor-blink" : ""}`} />
+              </div>
+            </div>
+            <div className="flex-shrink-0 -scale-y-100 rotate-180 w-[120px] h-[116px] overflow-hidden relative">
+              <img alt="Pixel art character" src={imgSprite} className="absolute inset-0 size-full object-contain [image-rendering:pixelated]" />
+            </div>
           </div>
           <div className="relative mt-5">
             <div className="absolute border border-[#492134] inset-0 translate-x-[9px] translate-y-[9px]" />
@@ -714,19 +727,13 @@ function MobilePage({
               <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#492134] text-[18px]">RESUME</span>
             </a>
           </div>
-          {/* Sprite */}
-          <div className="flex justify-center mt-6">
-            <div className="-scale-y-100 rotate-180 w-[180px] h-[174px] overflow-hidden relative">
-              <img alt="Pixel art character" src={imgSprite} className="absolute inset-0 size-full object-contain [image-rendering:pixelated]" />
-            </div>
-          </div>
         </section>
 
         {/* Divider */}
         <div className="mx-5 h-[3px] bg-[#F7D698] opacity-80" />
 
         {/* About Me */}
-        <section id="about" className="px-5 pt-10 pb-12">
+        <section id="about" className="scroll-mt-[48px] px-5 pt-10 pb-12">
           <div className="mb-6">
             <h2 className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[30px]">About Me!</h2>
             <div className="w-[120px] h-[3px] bg-[#F1F798] mt-1" />
@@ -768,7 +775,7 @@ function MobilePage({
         <div className="mx-5 h-[3px] bg-[#F7D698] opacity-80" />
 
         {/* Portfolio */}
-        <section id="work" className="px-5 pt-10 pb-12">
+        <section id="work" className="scroll-mt-[48px] px-5 pt-10 pb-12">
           <div className="text-center mb-6">
             <h2 className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[30px]">PORTFOLIO</h2>
             <div className="w-[110px] h-[3px] bg-[#F1F798] mx-auto mt-1" />
@@ -804,7 +811,7 @@ function MobilePage({
         </section>
 
         {/* Contact footer */}
-        <footer id="contact" className="bg-[#8d2b59] px-5 py-10">
+        <footer id="contact" className="scroll-mt-[48px] bg-[#8d2b59] px-5 py-10">
           <p className="font-['Inter:Bold',sans-serif] font-bold text-[#492134] text-[24px] mb-4">ARELI SMITH</p>
           <div className="relative mb-6 inline-block">
             <div className="absolute border border-[#492134] inset-0 translate-x-[8px] translate-y-[8px]" />
@@ -864,18 +871,22 @@ export default function App() {
     const onScroll = () => {
       const y = window.scrollY;
       const isMobile = window.innerWidth < 1024;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
       if (isMobile) {
-        const sectionIds = ["home", "about", "work", "contact"];
-        const marker = y + 60;
-        let currentSection = "home";
-        sectionIds.forEach((id) => {
-          const section = document.getElementById(id);
-          if (section && section.offsetTop <= marker) currentSection = id;
-        });
-        setActiveSection(currentSection);
+        if (y >= maxScroll - 4) {
+          setActiveSection("contact");
+        } else {
+          const sectionIds = ["home", "about", "work", "contact"];
+          const marker = y + 60;
+          let currentSection = "home";
+          sectionIds.forEach((id) => {
+            const section = document.getElementById(id);
+            if (section && section.offsetTop <= marker) currentSection = id;
+          });
+          setActiveSection(currentSection);
+        }
       } else {
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (y >= maxScroll - 4) setActiveSection("contact");
         else if (y >= DESKTOP_NAV_TARGETS.work) setActiveSection("work");
         else if (y >= DESKTOP_NAV_TARGETS.about) setActiveSection("about");
