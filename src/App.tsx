@@ -16,6 +16,7 @@ import imgDuckie from "./imports/Desktop1/Duckie AI.png";
 import imgPODConnect from "./imports/Desktop1/POD.png";
 import imgEatsyPeatsy from "./imports/Desktop1/Eatsy Peatsy.png";
 import imgShelfTalk from "./imports/Desktop1/Shelftalk.png";
+import resumePdf from "./imports/Desktop1/Areli_s_Resume.pdf";
 
 const FULL_TEXT = "I'm Areli Smith";
 
@@ -157,10 +158,10 @@ function DesktopCard({ p }: { p: Project }) {
         >
           <div className="absolute inset-[0.35%_0_-0.35%_0.58%]">
             <svg className="absolute block inset-0 size-full" fill="none" height="285" preserveAspectRatio="none" viewBox="0 0 345 285" width="345">
-              <path d="M0 0H345V285H0V0Z" fill="#492134" opacity="0.95" />
+              <path d="M0 0H345V285H0V0Z" fill="#8D2B59" opacity="1" />
             </svg>
           </div>
-          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-black overflow-y-auto">
+          <div className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold inset-[5.61%_4.03%_9.47%_4.03%] leading-[0] not-italic text-[17px] text-[#492134] overflow-y-auto">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mb-2">{p.techStack}</p>
             <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal]">{p.description}</p>
           </div>
@@ -355,10 +356,16 @@ function DesktopPage({
       {/* Ghost subtitle */}
       <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium h-[50px] leading-[normal] left-[122px] not-italic text-[#492134] text-[20px] top-[350px] w-[341px]">Computer Science Student Minoring in Digital Arts and Science</p>
       {/* Resume button */}
-      <div className="absolute cursor-pointer h-[39px] left-[212px] top-[422px] w-[158px]">
+      <a
+        className="absolute cursor-pointer h-[39px] left-[212px] top-[422px] w-[158px]"
+        href={resumePdf}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open Areli Smith's resume"
+      >
         <div className="absolute inset-0 bg-[#fdf2c0]" />
-      </div>
-      <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] left-[251px] not-italic text-[#492134] text-[20px] top-[430px] whitespace-nowrap">RESUME</p>
+        <p className="absolute left-[39px] top-[8px] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] text-[#492134] text-[20px] whitespace-nowrap">RESUME</p>
+      </a>
       {/* Portrait */}
       <div className="absolute flex h-[131.052px] items-center justify-center left-[425px] top-[263px] w-[125.752px]">
         <div className="flex-none rotate-[-12.63deg]">
@@ -697,9 +704,14 @@ function MobilePage({
           <p className="font-['Inter:Medium',sans-serif] font-medium text-[#492134] text-[16px] leading-snug mt-3">Computer Science Student Minoring in Digital Arts and Science</p>
           <div className="relative mt-4 inline-block">
             <div className="absolute border border-[#492134] inset-0 translate-x-[6px] translate-y-[6px]" />
-            <button className="relative bg-[#fdf2c0] px-8 py-2">
+            <a
+              className="relative block bg-[#fdf2c0] px-8 py-2"
+              href={resumePdf}
+              target="_blank"
+              rel="noreferrer"
+            >
               <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#492134] text-[18px]">RESUME</span>
-            </button>
+            </a>
           </div>
           {/* Sprite */}
           <div className="flex justify-center mt-6">
@@ -874,9 +886,9 @@ export default function App() {
     }
     const targets: Record<string, number> = {
       home: 0,
-      about: 601,   // 672 - 48
-      work: 1336,   // 1403 - 48
-      contact: 2496, // 2944 - 48
+      about: 553,   // 672 - 48
+      work: 1288,   // 1403 - 48
+      contact: 2448, // 2944 - 48
     };
     window.scrollTo({ top: targets[id] ?? 0, behavior: "smooth" });
   };
