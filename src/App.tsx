@@ -16,7 +16,7 @@ import imgDuckie from "./imports/Desktop1/Duckie AI.png";
 import imgPODConnect from "./imports/Desktop1/POD.png";
 import imgEatsyPeatsy from "./imports/Desktop1/Eatsy.png";
 import imgShelfTalk from "./imports/Desktop1/Shelftalk.png";
-import resumePdf from "./imports/Desktop1/Areli_s_Resume.pdf";
+import resumePdf from "./imports/Desktop1/Areli_Smith_Resume.pdf";
 import swampDemo from "./imports/Desktop1/Swamp_demo.mp4";
 
 const FULL_TEXT = "I'm Areli Smith";
